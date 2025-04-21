@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Manrope"
+}
+body{
+    height: 100vh;
+    background-color: #000000;
+
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3%;
+    height: 70px;
+    
+    
+}
+.logo {
+    width: 25px;
+}
+
+nav a{
+    text-decoration: none; /* Remove underline */
+    color: #CCCCCC;
+    font-size: 14px;
+    font-weight: 300;
+}
+nav ul{
+    display: flex;
+    list-style: none; /* Eliminar los puntos de la lista */
+    gap: 60px;
+    
+}
+.accion{
+    display: flex;
+    gap: 45px;
+    
+}
+.accion a img{
+    width: 25px;
+}
+main{
+    padding-top: 70px;
+    color: #FFFFFF;
+}
+.hero-section{
+    display: flex;
+    align-items: center; /* Center the content vertically */
+    justify-content: center;
+    flex-direction: column;
+    gap: 60px;
+}
+.hero-text{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content vertically */
+    justify-content: center;
+    text-align: center;
+}
+.hero-text h1{
+    font-size: 45px;
+}
+.hero-text p{
+
+    font-size: 22px;
+    margin-top: 15px;
+
+    width: 80%;
+    font-weight: bold;
+    
+}
+.botones{
+    margin-top: 30px;
+    display: flex;
+    gap: 80px;
+}
+.shop-now{
+    background-color: #3946AF;
+    color: #FFFFFF;
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 50px;
+    min-width: 100px;
+}
+.learn-more{
+    border: #3946AF solid 1px;
+    background-color: transparent;
+    color: #3946AF;
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 50px;
+    min-width: 100px;
+}
+footer{
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    background-color: #1D1D1F;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 300;
+    width: 100%;
+}
+.copyright{
+    text-align: center;
+    margin-top: 50px;
+    padding-bottom: 20px;
+}
+.footer-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+.columnas{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 3%;
+}
+.columnas div{
+    display: flex;
+    flex-direction: column;
+    
+}
+.columnas div p{
+    color: #FFFFFF;
+    
+}
+.columnas div a{
+    text-decoration: none; /* Remove underline */
+    color: #CCCCCC;
+}
