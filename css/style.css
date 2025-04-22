@@ -4,9 +4,19 @@
     box-sizing: border-box;
     font-family: "Manrope"
 }
+:root{
+     /* Variables para colores y valores recurrentes */
+     --primary-bg: #000000;
+     --footer-bg: #1D1D1F;
+     --text-light: #FFFFFF;
+     --text-gray: #CCCCCC;
+     --accent-blue: #3946AF;
+     --header-height: 70px;
+     --padding-standard: 3%;
+}
 body{
-    height: 100vh;
-    background-color: #000000;
+    min-height: 100vh; /* Cambiado de height a min-height para contenido más largo */
+    background-color: var(--primary-bg);
 
 }
 header{
@@ -15,11 +25,24 @@ header{
     align-items: center;
     padding: 0 3%;
     height: 70px;
-    
-    
+    width: 100%;
+    position: fixed; /* Mantiene el header fijo al hacer scroll */
+    top: 0; /* Asegura que esté en la parte superior */
+    background-color: var(--primary-bg);
+    z-index: 1000; /* Asegura que esté por encima del contenido */
+}
+.logo-container{
+   min-width: 95px; /* Ajusta el ancho para que sea igual que el contenedor "accion"*/
 }
 .logo {
     width: 25px;
+}
+
+nav ul{
+    display: flex;
+    list-style: none; /* Eliminar los puntos de la lista */
+    gap: 60px;
+    
 }
 
 nav a{
@@ -27,13 +50,14 @@ nav a{
     color: #CCCCCC;
     font-size: 14px;
     font-weight: 300;
+    transition: color 0.3s ease; /* Agregado para mejor UX */
 }
-nav ul{
-    display: flex;
-    list-style: none; /* Eliminar los puntos de la lista */
-    gap: 60px;
-    
+
+nav a:hover {
+    color: var(--text-light); /* Mejora la interactividad */
 }
+
+/* Contenedor de iconos de acción */
 .accion{
     display: flex;
     gap: 45px;
@@ -42,9 +66,30 @@ nav ul{
 .accion a img{
     width: 25px;
 }
+
+/* Menú hamburguesa (inicialmente oculto) */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hamburger-menu span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: var(--text-light);
+    transition: all 0.3s ease;
+}
+
 main{
     padding-top: 70px;
     color: #FFFFFF;
+    width: 100%;
 }
 .hero-section{
     display: flex;
@@ -52,6 +97,12 @@ main{
     justify-content: center;
     flex-direction: column;
     gap: 60px;
+}
+.hero-section img{
+    width: 80%; /* Reducido de 100% para mejor visualización */
+    max-width: 800px; /* Limita el tamaño en pantallas grandes */
+    height: auto;
+    transition: width 0.3s ease; /* Suaviza los cambios de tamaño */
 }
 .hero-text{
     display: flex;
@@ -62,6 +113,7 @@ main{
 }
 .hero-text h1{
     font-size: 45px;
+    transition: font-size 0.3s ease; /* Suaviza cambios de tamaño */
 }
 .hero-text p{
 
@@ -70,33 +122,46 @@ main{
 
     width: 80%;
     font-weight: bold;
-    
+    transition: font-size 0.3s ease; /* Suaviza cambios de tamaño */
 }
+
+/* Botones de acción */
 .botones{
     margin-top: 30px;
     display: flex;
-    gap: 80px;
+    gap: 30px;
+    flex-wrap: wrap; /* Permite que los botones se muevan a otra línea si es necesario */
+    justify-content: center;
+}
+
+.botones button{
+    font-size: 15px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    min-width: 100px; /* Asegura un ancho mínimo para los botones */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Suaviza cambios de color */
 }
 .shop-now{
     background-color: #3946AF;
     color: #FFFFFF;
     border: none;
-    padding: 10px 20px;
-    font-size: 15px;
-    cursor: pointer;
-    border-radius: 50px;
-    min-width: 100px;
+    
+}
+.shop-now:hover{
+    background-color: #4F5ACE;
+    
 }
 .learn-more{
     border: #3946AF solid 1px;
     background-color: transparent;
     color: #3946AF;
-    padding: 10px 20px;
-    font-size: 15px;
-    cursor: pointer;
-    border-radius: 50px;
-    min-width: 100px;
+    
 }
+.learn-more:hover {
+    background-color: rgba(57, 70, 175, 0.1); /* Efecto hover sutil */
+}
+
 footer{
     display: flex;
     flex-direction: column;
@@ -114,7 +179,7 @@ footer{
 }
 .footer-content{
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap; /* Permite que los elementos se muevan a otra línea si es necesario */
     justify-content: space-between;
     gap: 20px;
 }
@@ -122,6 +187,8 @@ footer{
     display: flex;
     flex-direction: column;
     gap: 20px;
+    flex: 1; /* Permite que las columnas se expandan uniformemente */
+    min-width: 200px; /* Ancho mínimo para cada columna */
     padding: 0 3%;
 }
 .columnas div{
@@ -131,9 +198,119 @@ footer{
 }
 .columnas div p{
     color: #FFFFFF;
-    
+    font-weight: 500; /* Título más destacado */
+    margin-bottom: 5px;
 }
 .columnas div a{
     text-decoration: none; /* Remove underline */
     color: #CCCCCC;
+    transition: color 0.3s ease; /* Suaviza cambios de color */
 }
+
+.columnas div a:hover {
+    color: var(--text-light); /* Efecto hover */
+}
+
+@media (max-width: 750px) {
+    .logo-container{
+        min-width: auto; /* Ajusta el ancho para que sea igual que el contenedor "accion"*/
+     }
+
+     /* Ajustes para navegación */
+     .nav-list {
+        gap: 30px; /* Reducir espacio entre elementos del menú */
+    }
+    
+    /* Ajustes para hero section */
+    .hero-text h1 {
+        font-size: 38px;
+    }
+    
+    .hero-text p {
+        font-size: 18px;
+    }
+    
+    /* Ajustes para footer */
+    .footer-content {
+        justify-content: flex-start; /* Mejor alineación cuando se apilan */
+    }
+    
+    .columnas {
+        min-width: 180px; /* Reducir ancho mínimo */
+        flex: 0 0 calc(50% - 15px); /* 2 columnas en tablet: 50% - mitad del gap */
+    }
+}
+
+/* Dispositivos pequeños (móviles, 576px y menos) */
+@media (max-width: 530px) {
+    
+    
+    /* Ajustes para el header y navegación */
+    .nav-list {
+        position: fixed;
+        top: var(--header-height); /* Debajo del header */
+        left: -100%; /* Oculto fuera de la pantalla inicialmente */
+        flex-direction: column;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.95);
+        height: calc(100vh - var(--header-height));
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transition: left 0.3s ease;
+        z-index: 999;
+    }
+    
+    .nav-list.active {
+        left: 0; /* Mostrar al activar */
+    }
+    
+    .hamburger-menu {
+        display: flex; /* Mostrar en móviles */
+    }
+    
+    /* Cuando el menú está activo, transformar en X */
+    .hamburger-menu.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg); /* Rotar el primer span */
+    }
+    
+    .hamburger-menu.active span:nth-child(2) {
+        opacity: 0;     /* Ocultar el segundo span */
+    }
+    
+    .hamburger-menu.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg); /* Rotar el tercer span */
+    }
+    
+    /* Ajustes para la sección hero */
+    .hero-text h1 {
+        font-size: 32px;
+    }
+    
+    .hero-text p {
+        font-size: 16px;
+        width: 90%; /* Ampliar para mejor legibilidad */
+    }
+    
+    .botones {
+        gap: 15px;
+        flex-direction: column; /* Apilar botones en móvil */
+        width: 100%;
+        align-items: center;
+    }
+    
+    .botones button {
+        width: 80%; /* Botones más anchos en móvil */
+        max-width: 250px; /* Limitar el tamaño máximo */
+    }
+    
+    /* Ajustes para footer */
+    .footer-content {
+        flex-direction: column;
+    }
+    
+    .columnas {
+        flex: 1 0 100%; /* Una columna ocupando todo el ancho */ 
+    }
+}
+

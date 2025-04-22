@@ -14,11 +14,14 @@
   </head>
   <body>
     <header>
-      <img
-        class="logo"
-        src="/product-landing-page/img/icons8-apple-inc-50.png"
-        alt="logo"
-      />
+      <div class="logo-container">
+        <img
+          class="logo"
+          src="/product-landing-page/img/icons8-apple-inc-50.png"
+          alt="logo"
+        />
+      </div>
+
       <nav>
         <ul class="nav-list">
           <li><a href="#">Store</a></li>
@@ -30,13 +33,22 @@
       </nav>
       <div class="accion">
         <a href="#"
-          ><img src="/product-landing-page/img/icons8-búsqueda-50.png" alt="busqueda"
+          ><img
+            src="/product-landing-page/img/icons8-búsqueda-50.png"
+            alt="busqueda"
         /></a>
         <a href="#"
           ><img
             src="/product-landing-page/img/icons8-shopping-bag-50.png"
             alt="carrito"
         /></a>
+        <!-- Hamburger menu para móviles -->
+        <div class="hamburger-menu">
+          <span></span>
+          <!-- Línea 1 -->
+          <span></span>
+          <span></span>
+        </div>
       </div>
     </header>
     <main>
@@ -98,7 +110,29 @@
         </div>
       </div>
 
-      <p class="copyright">&copy; 2023 Your Company Name. All rights reserved.</p>
+      <p class="copyright">
+        &copy; 2023 Your Company Name. All rights reserved.
+      </p>
     </footer>
+
+    <!-- Script para el menú hamburguesa -->
+    <script>
+      const hamburger = document.querySelector(".hamburger-menu");
+      const navList = document.querySelector(".nav-list");
+
+      hamburger.addEventListener("click", function () {
+        hamburger.classList.toggle("active");
+        navList.classList.toggle("active");
+      });
+
+      // Cerrar menú al hacer clic en un enlace
+      const navLinks = document.querySelectorAll(".nav-list a");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", function () {
+          hamburger.classList.remove("active");
+          navList.classList.remove("active");
+        });
+      });
+    </script>
   </body>
 </html>
