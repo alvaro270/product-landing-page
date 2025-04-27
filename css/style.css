@@ -12,7 +12,9 @@
      --text-gray: #CCCCCC;
      --accent-blue: #3946AF;
 }
-body{
+#body{
+    display: flex;
+    flex-direction: column;
     min-height: 100vh; /* Cambiado de height a min-height para contenido más largo */
     background-color: var(--primary-bg);
 
@@ -88,6 +90,7 @@ main{
     padding-top: 70px;
     color: var(--text-light);
     width: 100%;
+    background-color: var(--primary-bg);
 }
 .hero-section{
     display: flex;
@@ -160,53 +163,11 @@ main{
     background-color: rgba(57, 70, 175, 0.1); /* Efecto hover sutil */
 }
 
-footer{
-    display: flex;
-    flex-direction: column;
-    padding-top: 20px;
+#footer{
     background-color: var(--footer-bg);
     color: var(--text-light);
-    font-size: 14px;
-    font-weight: 300;
-    width: 100%;
-}
-.copyright{
-    text-align: center;
-    margin-top: 50px;
-    padding-bottom: 20px;
-}
-.footer-content{
-    display: flex;
-    flex-wrap: wrap; /* Permite que los elementos se muevan a otra línea si es necesario */
-    justify-content: space-between;
-    gap: 20px;
-}
-.columnas{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    flex: 1; /* Permite que las columnas se expandan uniformemente */
-    min-width: 200px; /* Ancho mínimo para cada columna */
-    padding: 0 3%;
-}
-.columnas div{
-    display: flex;
-    flex-direction: column;
+    margin-top: auto; /* Asegura que el footer esté al final */
     
-}
-.columnas div p{
-    color: #FFFFFF;
-    font-weight: 500; /* Título más destacado */
-    margin-bottom: 5px;
-}
-.columnas div a{
-    text-decoration: none; /* Remove underline */
-    color: #CCCCCC;
-    transition: color 0.3s ease; /* Suaviza cambios de color */
-}
-
-.columnas div a:hover {
-    color: var(--text-light); /* Efecto hover */
 }
 
 @media (max-width: 750px) {
@@ -228,15 +189,9 @@ footer{
         font-size: 18px;
     }
     
-    /* Ajustes para footer */
-    .footer-content {
-        justify-content: flex-start; /* Mejor alineación cuando se apilan */
-    }
     
-    .columnas {
-        min-width: 180px; /* Reducir ancho mínimo */
-        flex: 0 0 calc(50% - 15px); /* 2 columnas en tablet: 50% - mitad del gap */
-    }
+    
+    
 }
 
 /* Dispositivos pequeños (móviles, 576px y menos) */
@@ -302,13 +257,6 @@ footer{
         max-width: 250px; /* Limitar el tamaño máximo */
     }
     
-    /* Ajustes para footer */
-    .footer-content {
-        flex-direction: column;
-    }
-    
-    .columnas {
-        flex: 1 0 100%; /* Una columna ocupando todo el ancho */ 
-    }
+   
 }
 

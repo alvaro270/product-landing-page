@@ -11,8 +11,14 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="/product-landing-page/css/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
   </head>
-  <body>
+  <body id="body">
     <header>
       <div class="logo-container">
         <img
@@ -25,7 +31,9 @@
       <nav>
         <ul class="nav-list">
           <li><a href="/product-landing-page/index.html">Inicio</a></li>
-          <li><a href="/product-landing-page/testimonios.html">Testimonios</a></li>
+          <li>
+            <a href="/product-landing-page/testimonios.html">Testimonios</a>
+          </li>
           <li><a href="/product-landing-page/compra.html">Comprar</a></li>
           <li><a href="#">Only On Apple</a></li>
           <li><a href="#">Support</a></li>
@@ -68,51 +76,15 @@
         />
       </section>
     </main>
-
-    <footer>
-      <div class="footer-content">
-        <div class="columnas">
-          <div class="descubrir">
-            <p>Descubrir</p>
-            <a href="#">Mac</a>
-            <a href="#">iPad</a>
-            <a href="#">iPhone</a>
-          </div>
-          <div class="apple-wallet">
-            <p>Apple Wallet</p>
-            <a href="#">Apple Pay</a>
-          </div>
-        </div>
-        <div class="columnas">
-          <div class="cuenta">
-            <p>Cuenta</p>
-            <a href="">Administra tu cuenta de Apple</a>
-            <a href="">iCloud.com</a>
-          </div>
-          <div class="entretenimiento">
-            <p>Entretenimiento</p>
-            <a href="#">Apple Music</a>
-            <a href="#">Apple TV+</a>
-            <a href="#">Apple Arcade</a>
-          </div>
-        </div>
-        <div class="columnas">
-          <div class="soporte">
-            <p>Soporte</p>
-            <a href="#">Apple Store</a>
-            <a href="#">Apple Store App</a>
-          </div>
-          <div class="comprar">
-            <p>Comprar</p>
-            <a href="#">iPhone</a>
-            <a href="#">iPad</a>
-          </div>
-        </div>
-      </div>
-
-      <p class="copyright">
-        &copy; 2023 Your Company Name. All rights reserved.
-      </p>
+    <footer id="footer" class="py-3 my-4">
+      <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-light">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-light">Features</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-light">Pricing</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-light">FAQs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link px-2 text-body-light">About</a></li>
+      </ul>
+      <p class="text-center text-body-light">© 2025 Company, Inc</p>
     </footer>
 
     <!-- Script para el menú hamburguesa -->
@@ -134,5 +106,10 @@
         });
       });
     </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
