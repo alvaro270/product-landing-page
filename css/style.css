@@ -11,8 +11,6 @@
      --text-light: #FFFFFF;
      --text-gray: #CCCCCC;
      --accent-blue: #3946AF;
-     --header-height: 70px;
-     --padding-standard: 3%;
 }
 body{
     min-height: 100vh; /* Cambiado de height a min-height para contenido más largo */
@@ -69,7 +67,7 @@ nav a:hover {
 
 /* Menú hamburguesa (inicialmente oculto) */
 .hamburger-menu {
-    display: none;
+    display: none; 
     cursor: pointer;
     width: 30px;
     height: 20px;
@@ -88,7 +86,7 @@ nav a:hover {
 
 main{
     padding-top: 70px;
-    color: #FFFFFF;
+    color: var(--text-light);
     width: 100%;
 }
 .hero-section{
@@ -143,8 +141,8 @@ main{
     transition: background-color 0.3s ease, color 0.3s ease; /* Suaviza cambios de color */
 }
 .shop-now{
-    background-color: #3946AF;
-    color: #FFFFFF;
+    background-color: var(--accent-blue);
+    color: var(--text-light);
     border: none;
     
 }
@@ -153,9 +151,9 @@ main{
     
 }
 .learn-more{
-    border: #3946AF solid 1px;
+    border: var(--accent-blue) solid 1px;
     background-color: transparent;
-    color: #3946AF;
+    color: var(--accent-blue);
     
 }
 .learn-more:hover {
@@ -166,8 +164,8 @@ footer{
     display: flex;
     flex-direction: column;
     padding-top: 20px;
-    background-color: #1D1D1F;
-    color: #FFFFFF;
+    background-color: var(--footer-bg);
+    color: var(--text-light);
     font-size: 14px;
     font-weight: 300;
     width: 100%;

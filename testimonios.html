@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:wght@300;400&family=Urbanist:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/product-landing-page/css/style-testimonios.css">
+</head>
+<body>
+    <div class="grid-container">
+        <!-- Navbar/Header -->
+        <header class="header">
+            <div class="header-grid">
+                <div class="logo-container">
+                    <img class="logo" src="/product-landing-page/img/icons8-apple-inc-50.png" alt="logo" />
+                </div>
+    
+                <nav>
+                    <ul class="nav-list">
+                        <li><a href="/product-landing-page/index.html">Inicio</a></li>
+                        <li><a href="/product-landing-page/testimonios.html">Testimonios</a></li>
+                        <li><a href="/product-landing-page/compra.html">Comprar</a></li>
+                        <li><a href="#">Only On Apple</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="accion">
+                    <a href="#"><img src="/product-landing-page/img/icons8-búsqueda-50.png" alt="busqueda" /></a>
+                    <a href="#"><img src="/product-landing-page/img/icons8-shopping-bag-50.png" alt="carrito" /></a>
+                    <!-- Hamburger menu para móviles -->
+                    <div class="hamburger-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Filtros</h2>
+            <div class="filter-options">
+                <div class="filter-group">
+                    <h3>Calificación</h3>
+                    <label><input type="checkbox"> 5 estrellas</label>
+                    <label><input type="checkbox"> 4 estrellas</label>
+                    <label><input type="checkbox"> 3 estrellas</label>
+                </div>
+                <div class="filter-group">
+                    <h3>Categoría</h3>
+                    <label><input type="checkbox"> Calidad</label>
+                    <label><input type="checkbox"> Precio</label>
+                    <label><input type="checkbox"> Servicio</label>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <h2>Testimonios de Clientes</h2>
+            <div class="testimonials">
+                <!-- Testimonial Cards -->
+                <div class="testimonial-card">
+                    <div class="rating">★★★★★</div>
+                    <p>"Este producto superó todas mis expectativas. Lo recomiendo totalmente."</p>
+                    <div class="author">- María García</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="rating">★★★★☆</div>
+                    <p>"Excelente calidad y el servicio al cliente es inmejorable."</p>
+                    <div class="author">- Juan Pérez</div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="rating">★★★★★</div>
+                    <p>"Llevaba tiempo buscando algo así. Vale cada centavo."</p>
+                    <div class="author">- Ana Martínez</div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Nombre del Producto. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+     <!-- Script para el menú hamburguesa -->
+     <script>
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navList = document.querySelector('.nav-list');
+    
+    // Toggle para el menú hamburguesa
+    hamburgerMenu.addEventListener('click', function() {
+        hamburgerMenu.classList.toggle('active');
+        navList.classList.toggle('active');
+    });
+    
+    // Cerrar el menú cuando se hace clic en un enlace
+    const navLinks = document.querySelectorAll('.nav-list a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            hamburgerMenu.classList.remove('active');
+            navList.classList.remove('active');
+        });
+    });
+    
+    // Cerrar el menú cuando se hace clic fuera de él
+    document.addEventListener('click', function(event) {
+        const isClickInsideMenu = navList.contains(event.target);
+        const isClickOnHamburger = hamburgerMenu.contains(event.target);
+        
+        if (!isClickInsideMenu && !isClickOnHamburger && navList.classList.contains('active')) {
+            hamburgerMenu.classList.remove('active');
+            navList.classList.remove('active');
+        }
+    });
+      </script>
+</body>
+</html>

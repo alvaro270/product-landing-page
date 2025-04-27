@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:wght@300;400&family=Urbanist:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/product-landing-page/css/style-compra.css">
+</head>
+<body>
+    <!-- Header fuera del grid-container principal -->
+    <header class="header">
+        <div class="header-grid">
+            <div class="logo-container">
+                <img class="logo" src="/product-landing-page/img/icons8-apple-inc-50.png" alt="logo" />
+            </div>
+
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="/product-landing-page/index.html">Inicio</a></li>
+                    <li><a href="/product-landing-page/testimonios.html">Testimonios</a></li>
+                    <li><a href="/product-landing-page/compra.html">Comprar</a></li>
+                    <li><a href="#">Only On Apple</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </nav>
+            
+            <div class="accion">
+                <a href="#"><img src="/product-landing-page/img/icons8-búsqueda-50.png" alt="busqueda" /></a>
+                <a href="#"><img src="/product-landing-page/img/icons8-shopping-bag-50.png" alt="carrito" /></a>
+                <!-- Hamburger menu para móviles -->
+                <div class="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="grid-container">
+        <!-- Sidebar para la página de compra -->
+        <aside class="sidebar">
+            <h2>Proceso de Compra</h2>
+            <div class="purchase-steps">
+                <div class="step">
+                    <h3>1. Selección</h3>
+                    <p>Verifica el producto seleccionado</p>
+                </div>
+                <div class="step">
+                    <h3>2. Envío</h3>
+                    <p>Elige tu método de envío</p>
+                    <select aria-label="Método de envío">
+                        <option>Envío estándar (3-5 días)</option>
+                        <option>Envío express (1-2 días)</option>
+                    </select>
+                </div>
+                <div class="step">
+                    <h3>3. Pago</h3>
+                    <p>Selecciona tu método de pago</p>
+                    <div class="payment-options">
+                        <label><input type="radio" name="payment" checked> Tarjeta de crédito</label>
+                        <label><input type="radio" name="payment"> PayPal</label>
+                        <label><input type="radio" name="payment"> Transferencia bancaria</label>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <h2>Finalizar Compra</h2>
+            <div class="product-summary">
+                <div class="product-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0QjsRQfYpJLxrrIgB90H24rzbhA2hGKaIWQ&s" alt="Imagen del producto" width="200" height="200">
+                </div>
+                <div class="product-details">
+                    <h3>iPhone 15 Pro</h3>
+                    <p class="price">$999.99</p>
+                    <ul class="features">
+                        <li>Pantalla Super Retina XDR</li>
+                        <li>Chip A17 Pro con CPU de 6 núcleos</li>
+                        <li>Cámara Pro de 48MP</li>
+                        <li>Batería de hasta 23 horas de reproducción de video</li>
+                    </ul>
+                    <button class="cta-button">Completar compra</button>
+                </div>
+            </div>
+            
+            <!-- Productos relacionados -->
+            <div class="related-products">
+                <h3>Productos que te pueden interesar</h3>
+                <div class="related-grid">
+                    <div class="related-item">
+                        <img src="https://mac-center.com.pe/cdn/shop/files/AirPods_Pro_2nd_Gen_with_USB-C_PDP_Image_Position-2__global.jpg?v=1700336453&width=823" alt="AirPods Pro" width="100" height="100">
+                        <h4>AirPods Pro</h4>
+                        <p>$249.99</p>
+                    </div>
+                    <div class="related-item">
+                        <img src="https://pe.tiendasishop.com/cdn/shop/files/IMG-14859472.jpg?v=1740441952" alt="Apple Watch" width="100" height="100">
+                        <h4>Apple Watch Series 9</h4>
+                        <p>$399.99</p>
+                    </div>
+                    <div class="related-item">
+                        <img src="https://oechsle.vteximg.com.br/arquivos/ids/13724497/image-8651ddf01541433cb5de6a8fb0cf445c.jpg?v=638113176680100000" alt="Funda MagSafe" width="100" height="100">
+                        <h4>Funda MagSafe</h4>
+                        <p>$49.99</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 Apple Inc. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+    <!-- Script para el menú hamburguesa -->
+    <script>
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const navList = document.querySelector('.nav-list');
+    
+    // Toggle para el menú hamburguesa
+    hamburgerMenu.addEventListener('click', function() {
+        hamburgerMenu.classList.toggle('active');
+        navList.classList.toggle('active');
+    });
+    
+    // Cerrar el menú cuando se hace clic en un enlace
+    const navLinks = document.querySelectorAll('.nav-list a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            hamburgerMenu.classList.remove('active');
+            navList.classList.remove('active');
+        });
+    });
+    
+    // Cerrar el menú cuando se hace clic fuera de él
+    document.addEventListener('click', function(event) {
+        const isClickInsideMenu = navList.contains(event.target);
+        const isClickOnHamburger = hamburgerMenu.contains(event.target);
+        
+        if (!isClickInsideMenu && !isClickOnHamburger && navList.classList.contains('active')) {
+            hamburgerMenu.classList.remove('active');
+            navList.classList.remove('active');
+        }
+    });
+      </script>
+</body>
+</html>
